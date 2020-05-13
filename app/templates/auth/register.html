@@ -1,0 +1,60 @@
+{% import 'macros.html' as macro %}
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h3 class="text-center">Register</h3>
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <form action="" method="post">
+                <div class="form-row">
+                    <div class="col">
+                        {{form.first_name.label}}
+                        {{form.first_name(class='form-control')}}
+                    </div>
+                    <div class="col">
+                        {{form.last_name.label}}
+                        {{form.last_name(class='form-control')}}
+                        {{macro.errors(form.last_name.errors)}}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        {{form.email.label}}
+                        {{form.email(class='form-control')}}
+                        {{macro.errors(form.email.errors)}}
+                    </div>
+                    <div class="col">
+                        {{form.username.label}}
+                        {{form.username(class='form-control')}}
+                        {{macro.errors(form.username.errors)}}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        {{form.password.label}}
+                        {{form.password(class='form-control')}}
+                    </div>
+                    <div class="col">
+                        {{form.confirm_password.label}}
+                        {{form.confirm_password(class='form-control')}}
+                        {{macro.errors(form.confirm_password.errors)}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{form.account_type.label}}
+                    {{form.account_type(class='form-control')}}
+
+                </div>
+                <div class="form-group">
+                    {{form.agree.label}}
+                    {{form.agree}}
+                </div>
+                <div class="btn-group p-2">
+                    {{form.submit(class='btn btn-success')}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
